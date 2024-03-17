@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Hoang Vu Tinh | Personal Portfolio",
-  description: "Hoang Vu Tinh is a Front End developer with 2 year experience",
+  description: "Hoang Vu Tinh is a Front End developer with 2 year experiences",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative h-[5000px]`}
+        className={`${inter.className} bg-gray-50 text-gray-950 relative h-[5000px] pt-28 sm:pt-36`}
         suppressHydrationWarning={true}
       >
         <div className="-z-10 bg-[#fbe2e3] absolute top-[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>

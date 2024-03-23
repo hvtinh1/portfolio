@@ -6,9 +6,12 @@ import Link from "next/link";
 import { BsArrowRight, BsLink, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 export default function Intro() {
+  const { ref } = useSectionInView("Home");
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section ref={ref} className="mb-28 max-w-[50rem] text-center sm:mb-0">
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -54,11 +57,15 @@ export default function Intro() {
           className="group flex bg-gray-900 text-white px-7 py-3 items-center gap-2 rounded-full hover:scale-110 hover:bg-gray-950 active:scale-y-105 transition-all"
         >
           Contact me here
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition">
-          </BsArrowRight>
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"></BsArrowRight>
         </Link>
-        <a className="group flex cursor:pointer bg-white  px-7 py-3 items-center gap-2 rounded-full hover:scale-110 active:scale-y-105 transition-all border border-black/10" href="/CV.pdf" download>
-          Download CV <HiDownload className="opacity-70 group-hover:translate-y-1 transition "></HiDownload>
+        <a
+          className="group flex cursor:pointer bg-white  px-7 py-3 items-center gap-2 rounded-full hover:scale-110 active:scale-y-105 transition-all border border-black/10"
+          href="/CV.pdf"
+          download
+        >
+          Download CV{" "}
+          <HiDownload className="opacity-70 group-hover:translate-y-1 transition "></HiDownload>
         </a>
         <a className="flex bg-white text-gray-700 p-4 items-center gap-2 rounded-full active:scale-y-105 transition-all border border-black/10">
           <BsLinkedin href="https://linkedin.com" target="_blank"></BsLinkedin>

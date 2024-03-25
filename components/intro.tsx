@@ -10,6 +10,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 export default function Intro() {
   const { ref } = useSectionInView("Home");
+  const { setActiveSection, setTimeOfLastClick} = useActiveSectionContext();
   return (
     <section ref={ref} className="mb-28 max-w-[50rem] text-center sm:mb-0">
       <div className="flex items-center justify-center">
@@ -55,6 +56,10 @@ export default function Intro() {
         <Link
           href="#contact"
           className="group flex bg-gray-900 text-white px-7 py-3 items-center gap-2 rounded-full hover:scale-110 hover:bg-gray-950 active:scale-y-105 transition-all"
+            onClick={()=>{
+              setActiveSection("Contact");
+              setTimeOfLastClick(Date.now());
+            }}
         >
           Contact me here
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"></BsArrowRight>

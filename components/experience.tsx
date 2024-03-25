@@ -18,7 +18,7 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
+      <VerticalTimeline lineColor=""  className="!w-[1000px]">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
@@ -30,6 +30,7 @@ export default function Experience() {
                 textAlign: "left",
                 padding: "1.3rem 2rem",
                 display: "flex",
+                flexDirection: "column",
               }}
               contentArrowStyle={{
                 borderRight:

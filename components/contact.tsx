@@ -14,8 +14,8 @@ export default function Contact() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport= {{
-        once:true
+      viewport={{
+        once: true,
       }}
     >
       <SectionHeading>Contact me</SectionHeading>
@@ -26,14 +26,16 @@ export default function Contact() {
         </a>{" "}
         or through this form
       </p>
-      <form className="mt-10 flex flex-col" action={async (formData)=> {
-        console.log(formData)
-      }}>
+      <form
+        className="mt-10 flex flex-col"
+        action={async (formData) => {
+          console.log(formData);
+        }}
+      >
         <input
           className="h-14 rounded-lg borderBlack p-4"
           placeholder="Your email"
           type="email"
-         
         ></input>
         <textarea
           className="h-52 p-4 my-3 rounded-lg borderBlack"
